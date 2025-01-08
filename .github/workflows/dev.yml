@@ -28,11 +28,14 @@ jobs:
       - name: 🧰 Install Deps
         run: npm install
 
+      # Run build
+      - name: Run Build
+        run: npm run build
+
       # Run tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          build: npm run build
-          start: npm start
+          component: true
 
   
