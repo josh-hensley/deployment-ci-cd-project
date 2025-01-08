@@ -9,7 +9,7 @@ on:
 
 # Jobs to carry out
 jobs:
-  test:
+  cypress-run:
     # Operating system to run job on
     runs-on: ubuntu-latest
 
@@ -33,7 +33,9 @@ jobs:
         run: npm run build
 
       # Run tests
-      - name: Run Tests
-        run: npm run test-component
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm start
 
   
